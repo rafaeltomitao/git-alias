@@ -1,0 +1,15 @@
+[alias]
+	s = !git status -s
+	c = !git add --all && git commit -m
+	c-wip = !git add --all && git commit -m 'wip: in progress'
+	c-amend = !git add --all && git commit --amend --no-edit
+	l = !git log -n 10 	--pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
+	l-full = !git log 	--pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
+	b = !git checkout -b
+	b-delete = !git branch -D
+	p = !git push -u origin HEAD
+	main = !git remote update -p && git checkout master && git pull -r
+	main-r = !git main && git checkout - && git rebase master
+	main-m = !git main && git checkout - && git merge master
+	rebase-continue = !git add --all && git rebase --continue
+	global = !git config --global -e
